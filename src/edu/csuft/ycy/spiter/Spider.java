@@ -26,7 +26,6 @@ public class Spider implements Runnable{
    /**
     * 创建爬虫
     * @param url 页面路径
-    * @param list 存储数据的列表
     */
 	public Spider(String url, ArrayList<Film> list) {
 		super();
@@ -35,11 +34,12 @@ public class Spider implements Runnable{
 	}
 
 
+
 	@Override
 	public void run() {
 		//获得执行任务的线程的名称
 		String name=Thread.currentThread().getName();
-		System.out.println(name+"线程，开始："+url);
+		System.out.println(name+"线程，处理："+url);
 		
 		
 		try {
@@ -74,5 +74,4 @@ public class Spider implements Runnable{
 			e.printStackTrace();
 		}
 	}
-
 }

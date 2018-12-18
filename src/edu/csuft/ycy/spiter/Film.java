@@ -1,10 +1,11 @@
 package edu.csuft.ycy.spiter;
 
-public class Film {
+public class Film  implements Comparable<Film> {
 	/**
 	 * 影片名称
 	 * @author Administrator
 	 */
+	 
 	String title;
 	/**
 	 * 相关信息
@@ -26,14 +27,29 @@ public class Film {
      * 海报
      */
     String poster;
-	public String quote;
     /**
      * 短评
      */
+    String quote;
+    
+    public String toCSV() {
+    	return String.format("%d,%s,%d,%.1f\n",
+    			id,
+    			title,
+    			num,
+    			rating);
+    }
+   
 	@Override
 	public String toString() {
 		return "Film [title=" + title + ", info=" + info + ", rating=" + rating + ", num=" + num + ", id=" + id
 				+ ", poster=" + poster + "]";
+	}
+
+	@Override
+	public int compareTo(Film o) {
+		// TODO Auto-generated method stub
+		return id-o.id;
 	}
     
  
