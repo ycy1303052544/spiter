@@ -31,7 +31,7 @@ public class Film  implements Comparable<Film> {
      * ¶ÌÆÀ
      */
     String quote;
-    
+    String url;
     public String toCSV() {
     	return String.format("%d,%s,%d,%.1f\n",
     			id,
@@ -40,11 +40,13 @@ public class Film  implements Comparable<Film> {
     			rating);
     }
    
+
 	@Override
 	public String toString() {
 		return "Film [title=" + title + ", info=" + info + ", rating=" + rating + ", num=" + num + ", id=" + id
-				+ ", poster=" + poster + "]";
+				+ ", poster=" + poster + ", quote=" + quote + ", url=" + url + "]";
 	}
+
 
 	@Override
 	public int compareTo(Film o) {
